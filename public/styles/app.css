@@ -97,7 +97,7 @@ section .title{
 .navbar{
 
     width: 100%;
-    background-color: #188aae;
+
     padding: 20px 0;
     font-family: 'Montserrat', sans-serif;
     transition: all 0.3s ease;
