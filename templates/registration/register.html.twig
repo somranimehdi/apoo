@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login | Apoo
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+<link rel="stylesheet" href="{{  asset('/styles/auth.css' )  }}">
+
+{% endblock %}
+{% block body %}
+
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+	<div class="wrapper">
+		<div class="left">
+
+			<div class="slideshow-container">
+
+				<div class="mySlides fade">
+
+					<img src="{{asset("images/Cookie.jpg")}}" style="width:100%">
+
+				</div>
+
+				<div class="mySlides fade">
+
+					<img src="{{asset("images/Blue.jpg")}}" style="width:100%">
+
+				</div>
+
+				<div class="mySlides fade">
+
+					<img src="{{asset("images/Choco.jpg")}}" style="width:100%">
+
+				</div>
+
+			</div>
+			<br>
+
+			<div style="text-align:center">
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+			</div>
+		</div>
+		<div class="right">
+
+			<form action="" method="post" class="register-form">
+
+				{{ form_start(registrationForm) }}
+				<div class="input-container">
+					{{ form_row(registrationForm.email) }}
+
+				</div>
+				<div class="input-container">
+					{{ form_row(registrationForm.username) }}
+
+				</div>
+				<div class="input-container">
+		
+					{{ form_row(registrationForm.plainPassword) }}
+
+
+				</div>
+			<div class="input-container">
+		
+			<input type="password" placeholder="Repeat password"> 
+
+				</div>
+				<button>Register</button>
+				{{ form_end(registrationForm) }}
+			</form>
+
+			<p>Already a member ?
+				<a href="{{path("app_login")}}">Login Now</a>
+			</p>
+
+
+		</div>
+	</div>
+
+	<script>
+		let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+let i;
+let slides = document.getElementsByClassName("mySlides");
+let dots = document.getElementsByClassName("dot");
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";
+}
+slideIndex++;
+if (slideIndex > slides.length) {
+slideIndex = 1
+}
+for (i = 0; i < dots.length; i++) {
+dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex - 1].style.display = "block";
+dots[slideIndex - 1].className += " active";
+setTimeout(showSlides, 3000);
+}
+	</script>
+{% endblock %}

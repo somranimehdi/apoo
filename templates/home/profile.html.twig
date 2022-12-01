@@ -1,0 +1,49 @@
+{% extends "base.html.twig" %}
+
+
+
+{% block stylesheets %}
+	{{ parent() }}
+<link rel="stylesheet" href="{{  asset('/styles/profile.css' )  }}">
+{% endblock %}
+
+{% block body %}
+
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+	<div class="wrapper">
+		<div class="left">
+			<p>Username</p>
+			<br>
+			<h3>{{user.Username}}</h3>
+			<br>
+			<p>Email</p>
+			<br>
+			<h4>{{user.Email}}</h4>
+			<div class="line"></div>
+			<div class="links">
+
+				<br>
+				<a href="{{ path('Suggestions') }}" id="Suggestions">
+					<h3>Suggestions</h3>
+				</a>
+
+				<a href="{{ path('settings') }}">
+					<h3>Settings</h3>
+				</a>
+
+			</div>
+		</div>
+		<div class="right">
+			{% block content %}
+			
+			{% endblock %}
+
+
+		</div>
+
+
+	</div>
+	
+</div>{% endblock %}
+	

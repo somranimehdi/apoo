@@ -1,0 +1,23 @@
+{% extends 'home/profile.html.twig' %}
+
+{% block content %}
+	<h2>Suggestions available</h2>
+	{% for row in Suggestions %}
+
+
+		<div class="container">
+			{{row.sugg}}
+			<br><br>
+			{{row.UserId.username}}
+
+		</div>
+
+
+	{% endfor %}
+	<br>
+	<a href="{{ path('create_Suggestions') }}" id="Suggestions">
+		<h6 class="create">Create</h6>
+	</a>
+
+
+{% endblock %}

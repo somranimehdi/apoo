@@ -1,0 +1,171 @@
+:root {
+    --f1:CornflowerBlue; /* dark blue */
+    --f2:  linear-gradient(-90deg, rgba(131,234,241,1) 0%, rgba(99,164,255,1) 100%);
+    --f3:#fff; 
+    --TitleC: #1a2b46;
+    --sub_titleC : rgba(54, 63, 127, 0.786);
+    --Tc : #111;
+    --f4 :  #222;
+    --background : url("../images/header.jpg") no-repeat;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    margin: 0 !important;
+    padding: 0 !important;  
+}
+section{
+    padding: 100px 0;
+}
+
+
+.max-width h1{
+    color: #111;
+
+
+}
+section{
+    padding: 100px 0;
+}
+
+body {
+    background-color: #188aae;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 1px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* General setting */
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 100%;
+    padding: 0 80px;
+    margin: auto;
+}
+.characters, .stories, .projects{
+    font-family: 'Montserrat', sans-serif;
+}
+.characters .characters-content,
+.stories .stories-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.characters, .meetOurTeam {
+    color : #fff;
+    background :var(--f3);
+}
+.stories{
+    color:#fff;
+    background: var(--f2);
+}
+
+
+/* navbar styling */
+.navbar{
+
+    width: 100%;
+    background-color: #188aae;
+    padding: 20px 0;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: #fff;
+    font-size: 28px;
+    font-weight: 600;
+}
+.navbar .logo img{
+    width: 80px;
+    height: auto;
+}
+
+
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: CornflowerBlue;
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+
+
+/* menu btn styling */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+/* HOME */
+
+
+.home{
+    display: flex;
+    background: var(--background) no-repeat center;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Bebas Neue', sans-serif;
+    
+}
+.home .max-width{
+  width: 100%;
+  display: flex;
+  grid-template-columns: .3fr 2.5fr;
+
+}
+

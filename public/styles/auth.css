@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans &display=swap');
+
+
+/* Slideshow container */
+.slideshow-container {
+    width: 500px;
+    height: 550px;
+    position: fixed;
+
+}
+
+/* Caption text */
+
+/* Number text (1/3 etc) */
+
+
+/* The dots/bullets/indicators */
+.navbar{
+    background-color: #3798D8 ;
+}
+.active {
+    background-color: #3798D8;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .8
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.navbar{
+    background-color: #3798D8;
+  }
+  
+
+body {
+    background-color: #3798D8;
+    font-family: 'Montserrat';
+}
+
+.wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+
+    display: flex;
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, .08);
+    overflow-y: scroll;
+
+    height: 550px;
+}
+
+.wrapper .left {
+    width: 50%;
+    background: linear-gradient(to right,#01a9ac,#01dbdf);
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-align: center;
+    color: #fff;
+
+}
+
+
+.wrapper .right {
+
+    width: 50%;
+    background: #fff;
+    padding: 30px 25px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow-y: scroll;
+    text-align: center;
+    height: 550px;
+}
+
+ .register-form{
+    margin-top: 15%;
+}
+ .login-form{
+    margin-top: 30%;
+
+}
+
+input {
+    line-height: 30px;
+}
+.input-container {
+    display: block;
+    position: relative;
+    width: 250px;
+    margin-left: 100px;
+    margin-bottom: 25px;
+
+
+}
+.input-container label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 30px;
+    color: #fff;
+    pointer-event: none;
+    transition: all 0.5s ease-in-out;
+}
+.input-container input {
+    border: 0;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    width: 100%;
+    padding: 8px 0 5px;
+    font-size: 16px;
+    color: #111;
+}
+.input-container input:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #e74c3c;
+}
+
+
+/* CSS */
+button {
+    background: #5E5DF0;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+    margin-bottom: 10%;
+}

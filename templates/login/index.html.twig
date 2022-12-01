@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login | Apoo
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+<link rel="stylesheet" href="{{  asset('/styles/auth.css' )  }}">
+
+{% endblock %}
+{% block body %}
+	{% if error %}
+		<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+	{% endif %}
+
+
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+	<div class="wrapper">
+		<div class="left">
+
+			<div class="slideshow-container">
+
+				<div class="mySlides fade">
+
+					<img src="{{asset("images/Cookie.jpg")}}" style="width:100%">
+
+				</div>
+
+				<div class="mySlides fade">
+
+					<img src="{{asset("images/Blue.jpg")}}" style="width:100%">
+
+				</div>
+
+				<div class="mySlides fade">
+					<img src="{{asset("images/Choco.jpg")}}" style="width:100%">
+
+
+				</div>
+
+			</div>
+			<br>
+
+			<div style="text-align:center">
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+			</div>
+		</div>
+		<div class="right">
+			<p>You need to login before using your account</p>
+			<form action="{{ path('app_login') }}" method="post" class="login-form">
+				<div class="input-container">
+					<input type="text" id="username" name="_username" placeholder="Email"/>
+				</div>
+				<div class="input-container">
+
+					<input type="password" id="password" name="_password" placeholder="Passowrd"/>
+				</div>
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+				<button type="submit">login</button>
+			</form>
+
+			<p>New here ?
+				<a href="{{path("app_register")}}">Register Now</a>
+			</p>
+
+
+		</div>
+	</div>
+
+	<script>
+		let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+let i;
+let slides = document.getElementsByClassName("mySlides");
+let dots = document.getElementsByClassName("dot");
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";
+}
+slideIndex++;
+if (slideIndex > slides.length) {
+slideIndex = 1
+}
+for (i = 0; i < dots.length; i++) {
+dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex - 1].style.display = "block";
+dots[slideIndex - 1].className += " active";
+setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+	</script>
+{% endblock %}

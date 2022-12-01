@@ -1,0 +1,111 @@
+
+
+body {
+  background-color: #3798D8;
+  font-family: 'Montserrat';
+
+}
+.navbar{
+  background-color: #3798D8 ;
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1300px;
+
+
+  box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+
+  background: #fff;
+  height: 550px;
+  padding: 30px 25px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-align: center;
+  overflow-y: scroll;
+}
+
+
+img {
+  width: 300px;
+}
+
+
+.container,
+p,
+h4 {
+  margin: 0;
+
+}
+
+h1{
+  color: #111;
+  text-align: center;
+  margin-bottom:5%;
+  font-size: 50px;
+}
+
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 300px;
+  height: auto;
+  background-color: #fff;
+  box-shadow: 1px 1px 1px 1px rgba(240, 240, 240, 0.571);
+}
+
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+  
+}
+
+div.desc p{
+  color: black;
+}
+
+.container {
+  width: 300px;
+  text-align:center;
+  position: relative;
+
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 102,.5)	;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

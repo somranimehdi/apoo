@@ -1,0 +1,46 @@
+{% extends 'home/profile.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+<link rel="stylesheet" href="{{  asset('/styles/settings.css' )  }}">
+
+{% endblock %}
+{% block content %}
+	<div class="w-4/5 m-auto pt-40">
+		<h1 class="text-6xl text-center pb-12">
+			Edit profile
+
+		</h1>
+		<br><br>
+
+		<form action="" method="post" class="register-form">
+
+			{{ form_start(EditForm) }}
+
+								 	<div class="input-container">
+				{{ form_row(EditForm.email) }}
+
+			</div>	
+		
+
+		
+			<div class="input-container">
+				{{ form_row(EditForm.username) }}
+
+			</div>
+			<div class="input-container">
+
+				{{ form_row(EditForm.plainPassword) }}
+
+
+			</div>
+			<div class="input-container">
+
+				<input type="password" placeholder="Repeat password">
+
+			</div>
+			<button>Update</button>
+			{{ form_end(EditForm) }}
+		</form>
+	</div>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{  asset('/styles/characters.css' )  }}">
+
+<link rel="stylesheet" href="{{  asset('/styles/stories.css' )  }}">
+{% endblock %}
+        {% block body %}
+<div class="section custom-full1">
+  <section class="home" id="home">
+
+    <div class="max-width">
+      
+        <div class="home-content">
+   
+            </div>
+            </div>
+            
+            
+          
+      
+        </div>
+
+    </div>
+
+</section>
+</div>
+
+
+<div class="section">
+   <!--characters Section-->
+   <section class="characters" id="characters">
+    <div class="max-width">
+       <h1>Characters</h1>
+       <div class="characters-content">
+    
+           {% for row in characters %}
+
+			<div class="gallery">
+				<div class="container">
+					<img src="{{ asset( row.PictureLink ) }}">
+					<div class="overlay">
+						<div class="text">
+							<b>{{row.CharacterName}}</b>
+							<br>
+							{{row.About}}</div>
+					</div>
+				</div>
+				<div class="desc">
+                <p>
+                {{row.CharacterName}}
+                </p>
+                </div>
+			</div>
+
+
+		{% endfor %}
+       </div>
+
+
+   
+    </div>
+    </section>
+    </div>
+
+
+
+<div class="section">
+   <!--stories Section-->
+   <section class="stories" id="stories">
+    <div class="max-width">
+       <h1>Stories</h1>
+
+    <div class="stories-content">
+    {% for row in stories %}
+<div class="gallery">
+      <a href="{{row.StoryLink}}" target="_blank">
+       <img src="{{  asset(  row.PreviewLink )  }}" >
+  </a>
+  <div class="desc">
+  <p>{{row.StoryTitle}}</p>
+  </div>
+</div>
+
+  {% endfor %}
+    
+    </div>
+   
+    </div>
+    </section>
+    </div>
+
+
+        {% endblock %}

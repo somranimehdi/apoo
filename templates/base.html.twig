@@ -4,16 +4,70 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+        {% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('/styles/app.css' )  }}">
+    <style>
+    .navbar{
+
+
+    background-color: #188aae;
+
+}
+    </style>
+
         {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    <header>
+    {% block header %}
+  
+   
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="{{path('apoo')}}"> 
+               <img src='{{asset("images/apoo.png")}}' alt="">
+                </a></div>            <ul class="menu">
+                <li><a href="{{path('apoo')}}" class="menu-btn">Home</a></li>
+                <li><a href="{{path('app_characters')}}" class="menu-btn">Characters</a></li>
+                <li><a href="{{path('app_stories')}}" class="menu-btn">Stories</a></li>
+                <li>
+                 {% if is_granted('ROLE_ADMIN') %}
+
+                <a class="link" href="{{ path('app_admin') }}">Admin</a>
+                {% elseif is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a class="link" href="{{ path('Suggestions') }}">Profile</a>
+               
+
+                 {% else %}
+                <a href="{{path('app_login')}}" class="menu-btn">Login</a></li>
+</li>
+                {% endif %}
+                <li>
+                   {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a class="link" href="{{ path('app_logout') }}">LogOut</a>
+                 {% else %}
+                <a href="{{path('app_register')}}" class="menu-btn">SignUp</a></li>
+
+                {% endif %}
+               
+
+                <li><a href="#projects" class="menu-btn"></a></li>
+     
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    {% endblock %}
+    </header>
+   <body>
+    {% block body %}   
+    
+     {% endblock %}
+   </body>
+ 
 </html>

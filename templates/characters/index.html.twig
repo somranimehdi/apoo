@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+
+{% block stylesheets %}
+	{{ parent() }}
+
+<link rel="stylesheet" href="{{  asset('/styles/characters.css' )  }}">
+
+{% endblock %}
+
+{% block body %}
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+	<div class="wrapper">
+		<h2>Characters
+		</h2>
+		<br><br>
+
+		{% for row in characters %}
+
+			<div class="gallery">
+				<div class="container">
+					<img src="{{ asset( row.PictureLink ) }}">
+					<div class="overlay">
+						<div class="text">
+							<b>{{row.CharacterName}}</b>
+							<br>
+							{{row.About}}</div>
+					</div>
+				</div>
+				<div class="desc">{{row.CharacterName}}</div>
+			</div>
+
+
+		{% endfor %}
+
+	</div>
+</div>{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+<link rel="stylesheet" href="{{  asset('/styles/stories.css' )  }}">
+{% endblock %}
+
+{% block body %}
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+<div class="wrapper">
+<h2>Stories		</h2>
+<br> <br>
+{% for row in stories %}
+<div class="gallery">
+      <a href="{{row.StoryLink}}" target="_blank">
+       <img src="{{  asset(  row.PreviewLink )  }}" >
+  </a>
+  <div class="desc">{{row.StoryTitle}}</div>
+</div>
+
+  {% endfor %}
+ 
+
+    </div>
+</div>
+{% endblock %}

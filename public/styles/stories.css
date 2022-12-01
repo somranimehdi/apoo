@@ -1,0 +1,47 @@
+
+.navbar{
+  background-color: #3798D8;
+}
+
+body {
+  background-color: #3798d8;
+  font-family: 'Montserrat';
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1300px;
+  box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+  background: #fff;
+  height: 550px;
+  padding: 30px 25px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-align: center;
+
+}
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 300px;
+  height: 350px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}

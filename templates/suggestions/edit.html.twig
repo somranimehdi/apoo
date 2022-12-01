@@ -1,0 +1,21 @@
+{% extends 'home/profile.html.twig' %}
+
+{% block content %}
+<div class="w-4/5 m-auto pt-40">
+    <h1>
+    Edit a suggestion
+
+    </h1>
+
+    {{ form_start(form) }}
+
+        {{ form_widget(form) }}
+        
+        <button    
+            type="submit"
+            Submit Post
+        </button>
+
+    {{ form_end(form) }}
+</div>
+{% endblock %}
