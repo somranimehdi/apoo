@@ -1,16 +1,16 @@
 {% extends "base.html.twig" %}
 
-<title>
-	{% block title %}Apoo! | Stories
-	{% endblock %}
-</title>
-
 {% block stylesheets %}
 	{{ parent() }}
 	<link rel="stylesheet" href="{{ asset('/styles/stories.css' ) }}">
 {% endblock %}
 
 {% block body %}
+
+<title>
+	{% block title %}Apoo! | Stories{% endblock %}
+</title>
+
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
 	<div class="wrapper">
@@ -24,6 +24,8 @@
 					<img src="{{ asset( row.PreviewLink ) }}">
 				</a>
 				<div class="desc">{{row.StoryTitle}}</div>
+				<br>
+				<a href="/like/{{row.id}}"> Add to favorites </a>
 			</div>
 
 		{% endfor %}

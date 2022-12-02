@@ -35,9 +35,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user_id', targetEntity: Suggestions::class)]
     private Collection $suggestions;
 
+    #[ORM\ManyToMany(targetEntity: Stories::class, inversedBy: 'users')]
+
+
+    private Collection $stories;
+
     public function __construct()
     {
         $this->suggestions = new ArrayCollection();
+        $this->stories = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -148,6 +154,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $suggestion->setUserId(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Stories>
+     */
+    public function getStories(): Collection
+    {
+        return $this->stories;
+    }
+
+    public function addStory(Stories $story): self
+    {
+        if (!$this->stories->contains($story)) {
+            $this->stories->add($story);
+        }
+
+        return $this;
+    }
+
+    public function removeStory(Stories $story): self
+    {
+        $this->stories->removeElement($story);
 
         return $this;
     }

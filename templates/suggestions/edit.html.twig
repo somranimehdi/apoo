@@ -1,21 +1,82 @@
 {% extends 'home/profile.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		.input-container {
+			margin-top: 3%;
+			display: block;
+			position: relative;
+			width: 250px;
 
+			margin-bottom: 25px;
+
+
+		}
+		.input-container label {
+			position: absolute;
+			top: 0;
+			left: 0;
+			font-size: 30px;
+			color: #fff;
+			pointer-event: none;
+			transition: all 0.5s ease-in-out;
+		}
+		.input-container input {
+			border: 0;
+			border-bottom: 1px solid #555;
+			background: transparent;
+			width: 100%;
+			padding: 8px 0 5px;
+			font-size: 16px;
+			color: #111;
+		}
+		.input-container input:focus {
+			border: none;
+			outline: none;
+			border-bottom: 1px solid #e74c3c;
+		}
+		button {
+			background: #5E5DF0;
+			border-radius: 999px;
+			box-shadow: #5E5DF0 0 10px 20px -10px;
+			box-sizing: border-box;
+			color: #FFFFFF;
+			cursor: pointer;
+			font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 24px;
+			opacity: 1;
+			outline: 0 solid transparent;
+			padding: 8px 18px;
+			user-select: none;
+			-webkit-user-select: none;
+			touch-action: manipulation;
+			width: fit-content;
+			word-break: break-word;
+			border: 0;
+
+		}
+	</style>
+{% endblock %}
 {% block content %}
-<div class="w-4/5 m-auto pt-40">
-    <h1>
-    Edit a suggestion
+	<div>
+		<h1>
+			Edit a suggestion
 
-    </h1>
+		</h1>
 
-    {{ form_start(form) }}
+		{{ form_start(form) }}
+		<div class="input-container">
 
-        {{ form_widget(form) }}
-        
-        <button type="submit">
-            
-            Submit Post
-        </button>
+			{{ form_widget(form) }}
+		</div>
 
-    {{ form_end(form) }}
-</div>
+		<button type="submit">
+
+			Submit suggestion
+		</button>
+
+		{{ form_end(form) }}
+	</div>
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 
 
-        <title>{% block title %}Apoo! | Profile{% endblock %}</title>
+       
 
 {% block stylesheets %}
 	{{ parent() }}
@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block body %}
-
+ <title>{% block title %}Apoo! | Profile{% endblock %}</title>
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
 	<div class="wrapper">
@@ -28,9 +28,14 @@
 				<a href="{{ path('Suggestions') }}" id="Suggestions">
 					<h3>Suggestions</h3>
 				</a>
-
+<a href="/saved/{{user.id}}" id="Suggestions">
+					<h3>Saved Stories</h3>
+				</a>
 				<a href="{{ path('settings') }}">
 					<h3>Settings</h3>
+				</a>
+				<a href="/delete/{{user.id}}">
+					<h3 style="color:#FF3232;">Delete Account</h3>
 				</a>
 
 			</div>

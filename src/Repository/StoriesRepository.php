@@ -3,8 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\Stories;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\Validator\Constraints\Collection;
 
 /**
  * @extends ServiceEntityRepository<Stories>
@@ -38,6 +40,7 @@ class StoriesRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+
 
 //    /**
 //     * @return Stories[] Returns an array of Stories objects

@@ -18,7 +18,7 @@ class SuggestionsFormType extends AbstractType
         $builder
             ->add('sugg', TextType::class, [
                 'attr' => array(
-                    'placeholder' => 'Enter title...',
+                    'placeholder' => 'Enter Suggestion...',
                 ),
                 'label' => false,
                 'required' => false

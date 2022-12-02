@@ -1,0 +1,52 @@
+{% extends 'home/profile.html.twig' %}
+      {% block stylesheets %}
+			{{ parent() }}
+	
+      <style>
+.remove:hover{
+	color:red;
+}
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 200px;
+  height: 250px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+	  </style>
+      {% endblock %}
+
+{% block content %}
+<h2>Stories you Saved </h2>
+<br><br>
+ 	{% for row in stories %}
+			<div class="gallery">
+				<a href="{{row.StoryLink}}" target="_blank">
+					<img src="{{ asset( row.PreviewLink ) }}">
+				</a>
+				<div class="desc">{{row.StoryTitle}} </div>
+			<a href="/delete/{{user.id}}/{{row.id}}" class="remove"> Remove  </a>
+
+			
+			</div>
+
+		{% endfor %}
+
+
+
+{% endblock %}

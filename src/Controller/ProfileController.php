@@ -58,5 +58,15 @@ class ProfileController extends AbstractController
         ]);
     }
 
+    #[Route('/delete/{id}', methods: ['GET', 'DELETE'], name: 'delete_account')]
+    public function delete($id): Response
+    {
+   
+        $User = $this->UserRepository->find($id);
+        $this->em->remove($User);
+        $this->em->flush();
+
+        return $this->redirectToRoute('app_logout');
+    }
 }
 

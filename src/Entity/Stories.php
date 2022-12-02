@@ -24,12 +24,15 @@ class Stories
     #[ORM\Column(length: 255)]
     private ?string $story_link = null;
 
-    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'stories')]
-    private Collection $email;
+
+
+    #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'stories')]
+    private Collection $users;
 
     public function __construct()
     {
-        $this->email = new ArrayCollection();
+    
+        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -73,26 +76,31 @@ class Stories
         return $this;
     }
 
+
+
     /**
      * @return Collection<int, User>
      */
-    public function getEmail(): Collection
+    public function getUsers(): Collection
     {
-        return $this->email;
+        return $this->users;
     }
 
-    public function addEmail(User $email): self
+    public function addUser(User $user): self
     {
-        if (!$this->email->contains($email)) {
-            $this->email->add($email);
+        if (!$this->users->contains($user)) {
+            $this->users->add($user);
+            $user->addStory($this);
         }
 
         return $this;
     }
 
-    public function removeEmail(User $email): self
+    public function removeUser(User $user): self
     {
-        $this->email->removeElement($email);
+        if ($this->users->removeElement($user)) {
+            $user->removeStory($this);
+        }
 
         return $this;
     }
