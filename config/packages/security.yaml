@@ -41,6 +41,7 @@ security:
         - { path: ^/profile, roles: ROLE_USER }
         - { path: ^/suggestions, roles: ROLE_USER }
         - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/like, roles: ROLE_ADMIN }
 
 when@test:
     security:
