@@ -9,14 +9,16 @@ body {
 }
 
 .wrapper {
-  position: absolute;
-  top: 50%;
+  position: fixed;
+
+  overflow-y: scroll;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 1300px;
   box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
   background: #fff;
-  height: 550px;
+  height: 600px;
   padding: 30px 25px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -26,14 +28,17 @@ body {
 
 div.gallery {
   margin: 5px;
-  border: 1px solid #ccc;
+
   float: left;
   width: 300px;
   height: 350px;
+  margin-bottom: 50px;
+  transition: transform .2s; /* Animation */
+
 }
 
 div.gallery:hover {
-  border: 1px solid #777;
+  transform: scale(1.1);
 }
 
 div.gallery img {
@@ -42,6 +47,10 @@ div.gallery img {
 }
 
 div.desc {
+  width: 300;
   padding: 15px;
   text-align: center;
+  border: 1px solid rgb(116, 116, 116);
+
+  background-color: #fff;
 }

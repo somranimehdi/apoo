@@ -3,6 +3,14 @@
 {% block stylesheets %}
 	{{ parent() }}
 	<link rel="stylesheet" href="{{ asset('/styles/stories.css' ) }}">
+	<style>
+	.fav{
+		margin-top : 1%;
+		margin-bottom:30px;
+
+		float: right;
+	}
+	</style>
 {% endblock %}
 
 {% block body %}
@@ -23,9 +31,10 @@
 				<a href="{{row.StoryLink}}" target="_blank">
 					<img src="{{ asset( row.PreviewLink ) }}">
 				</a>
-				<div class="desc">{{row.StoryTitle}}</div>
-				<br>
-				<a href="/like/{{row.id}}"> Add to favorites </a>
+				<div class="desc">{{row.StoryTitle}} | <a href="/like/{{row.id}}" class="">Save it</a></div>
+				
+				
+				<br><br>
 			</div>
 
 		{% endfor %}
