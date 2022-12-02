@@ -15,10 +15,10 @@ class apooController extends AbstractController
     {
         $repository = $doctrine->getRepository(Characters::class);
 
-        $characters = $repository->findAll(4);
+        $characters = $repository->findAll();
         $repository = $doctrine->getRepository(Stories::class);
 
-        $stories = $repository->findAll(4);
+        $stories = $repository->findAll();
 
         return $this->render('home/index.html.twig', [
             'stories' =>  $stories,

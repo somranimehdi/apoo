@@ -35,7 +35,7 @@
        <h1>Characters</h1>
        <div class="characters-content">
     
-           {% for row in characters %}
+           {% for row in characters[0:4]  %}
 
 			<div class="gallery">
 				<div class="container">
@@ -73,7 +73,7 @@
        <h1>Stories</h1>
 
     <div class="stories-content">
-    {% for row in stories %}
+    {% for row in stories[0:4] %}
 <div class="gallery">
       <a href="{{row.StoryLink}}" target="_blank">
        <img src="{{  asset(  row.PreviewLink )  }}" >
