@@ -34,6 +34,9 @@
 				<a href="{{ path('settings') }}">
 					<h3>Settings</h3>
 				</a>
+				{% if is_granted('ROLE_ADMIN') %}
+                <a class="link" href="/admin"><h3>Admin Panel</h3></a>
+				{% endif %}
 				<a href="/delete/{{user.id}}">
 					<h3 style="color:#FF3232;">Delete Account</h3>
 				</a>

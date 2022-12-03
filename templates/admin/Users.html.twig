@@ -1,0 +1,48 @@
+{% extends 'admin/index.html.twig' %}
+{% block stylesheets %}
+{{ parent() }}
+<style>
+#customers {
+ 
+  border-collapse: collapse;
+  width: 70%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #e1e5f5;}
+
+#customers tr:hover {background-color: #8191e3;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #3434a8;
+  color: white;
+}
+</style>
+{% endblock %}
+{% block content %}
+<table id="customers">
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Action</th>
+  </tr>
+
+{% for row in users %}
+	
+  <tr>
+    <td>{{row.Username}}</td>
+    <td>	{{row.Email}}</td>
+    <td><a href="/admin/delete/{{row.id}}"style="color:darkred">Delete</a></td>
+  </tr>
+  {% endfor %}
+</table>
+
+
+{% endblock %}

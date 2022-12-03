@@ -1,23 +1,44 @@
-{% extends 'home/profile.html.twig' %}
 
-{% block content %}
-	<h2>Suggestions available</h2>
-	{% for row in Suggestions %}
+<head>
+{% block stylesheets %}
 
-
-		<div class="container">
-			{{row.sugg}}
-			<br><br>
-			{{row.UserId.username}}
-
-		</div>
-
-
-	{% endfor %}
-	<br>
-	<a href="{{ path('create_Suggestions') }}" id="Suggestions">
-		<h6 class="create">Create</h6>
-	</a>
-
+<link rel="stylesheet" href="{{ asset('/styles/admin.css' )  }}">
 
 {% endblock %}
+</head>
+
+<body>
+	{% block body %}
+	<div class="wrapper">
+	<div class="left">
+	<h1>Hello Admin</h1>
+			<div class="line"></div>
+			<div class="links">	
+				<a href="/admin">
+					<h3>Users list</h3>
+
+				</a>
+
+			<a href="{{ path('app_admin_stories') }}" id="stories">
+					<h3>Available Stories</h3>
+				</a>
+				<a href="{{ path('app_admin_suggestions') }}" id="Suggestions">
+					<h3>Available Suggestions</h3>
+				</a>
+
+
+			
+			</div>
+	</div>
+		<div class="right">
+		<div class="back-to-normal">
+<a href="/profile"><b>Back to profile</b></a>
+</div>
+{% block content %}{% endblock %}
+	</div>
+	</div>
+
+
+	
+{% endblock %}
+</body>

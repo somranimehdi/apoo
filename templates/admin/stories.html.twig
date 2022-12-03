@@ -1,0 +1,70 @@
+{% extends 'admin/index.html.twig' %}
+{% block stylesheets %}
+{{ parent() }}
+	      <style>
+.remove:hover{
+	color:red;
+}
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 200px;
+  height: 270px;
+
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+.plus img{
+margin-left:23px;
+margin-top:25px;
+margin-bottom:15px;
+    width:80% !important;
+    height:auto !important;
+      opacity: 0.5;
+}
+
+	  </style>
+{% endblock %}
+{% block content %}
+	<h2>Stories available</h2>
+{% for row in stories %}
+			<div class="gallery">
+				<a href="{{row.StoryLink}}" target="_blank">
+					<img src="{{ asset( row.PreviewLink ) }}">
+				</a>
+				<div class="desc">{{row.StoryTitle}} | <a href="/admin/delete/story/{{row.id}}" style="color:darkred">delete</a></div>
+				
+				
+				<br><br>
+			</div>
+
+		{% endfor %}
+		<div class="gallery">
+				
+                <div class="plus">
+
+				<a href="/admin/stories/create"><img src="https://www.freepnglogos.com/uploads/plus-icon/plus-icon-plus-svg-png-icon-download-1.png"></a>
+                					
+</div>
+				<div class="desc">Add another Story</div>
+				
+				
+				<br><br>
+			</div>
+
+
+
+{% endblock %}

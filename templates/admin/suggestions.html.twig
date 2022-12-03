@@ -1,0 +1,41 @@
+{% extends 'admin/index.html.twig' %}
+{% block stylesheets %}
+{{ parent() }}
+<style>
+
+.container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 200px;
+  height: 130px;
+  text-align: center;
+  border: solid 1px black;
+  margin-top: 20px;
+
+  margin-left: 20px;
+  float: left;
+}
+
+</style>
+
+{% endblock %}
+{% block content %}
+	<h2>Suggestions available</h2>
+	{% for row in Suggestions %}
+
+
+		<div class="container">
+        <br>
+			{{row.sugg}}
+			<br><br>
+			<b>{{row.UserId.username}}</b>
+        <br> <br>
+                    <a href="/admin/suggestions/delete/{{row.id}}"  style="color:darkred">delete</a>
+
+		</div>
+
+
+	{% endfor %}
+	
+
+{% endblock %}

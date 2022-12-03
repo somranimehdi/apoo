@@ -51,7 +51,7 @@
 			<p>You need to login before using your account</p>
 			<form action="{{ path('app_login') }}" method="post" class="login-form">
 				<div class="input-container">
-					<input type="text" id="username" name="_username" placeholder="Email"/>
+					<input type="email" id="username" name="_username" placeholder="Email"/>
 				</div>
 				<div class="input-container">
 
@@ -65,8 +65,10 @@
 			<p>New here ?
 				<a href="{{path("app_register")}}">Register Now</a>
 			</p>
-
-
+		<br>	
+		<p>Forgot your password ?
+				<a href="/reset-password">Reset Password</a>
+			</p>
 		</div>
 	</div>
 

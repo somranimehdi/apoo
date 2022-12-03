@@ -27,10 +27,8 @@
                 <li><a href="{{path('app_characters')}}" class="menu-btn">Characters</a></li>
                 <li><a href="{{path('app_stories')}}" class="menu-btn">Stories</a></li>
                 <li>
-                 {% if is_granted('ROLE_ADMIN') %}
-
-                <a class="link" href="{{ path('app_admin') }}">Admin</a>
-                {% elseif is_granted('IS_AUTHENTICATED_FULLY') %}
+           
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <a class="link" href="{{ path('Suggestions') }}">Profile</a>
                
 

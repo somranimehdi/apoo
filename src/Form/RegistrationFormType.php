@@ -7,11 +7,15 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
 class RegistrationFormType extends AbstractType
 {
@@ -19,35 +23,30 @@ class RegistrationFormType extends AbstractType
     {
         $builder
 
-        
-            ->add('email', TextType::class, [
+
+            ->add('email', EmailType::class, [
                 'label' => false,
                 'attr' => [
-                    'autocomplete' => 'email',                     
-                    'class' => 'bg-transparent block mt-10 mx-auto border-b-2 w-1/5 h-20 text-2xl outline-none',
-                    'placeholder' => 'Email'
+                    'autocomplete' => 'email',
+                    'placeholder' => 'Email',
+
                 ],
             ])
             ->add('username', TextType::class, [
                 'label' => false,
                 'attr' => [
-                    'autocomplete' => 'Username',                     
-                    'class' => 'bg-transparent block mt-10 mx-auto border-b-2 w-1/5 h-20 text-2xl outline-none',
+                    'autocomplete' => 'Username',
                     'placeholder' => 'Username'
                 ],
             ])
-            
-    
-            ->add('plainPassword', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
-                'label' => false,
-                'mapped' => false,
-                'attr' => [
-                    'autocomplete' => 'new-password',                     
-                    'class' => 'bg-transparent block mt-10 mx-auto border-b-2 w-1/5 h-20 text-2xl outline-none',
-                    'placeholder' => 'Password'
-                ],
+            ->add('password', RepeatedType::class, [
+                'type' => PasswordType::class,
+                'invalid_message' => 'The password fields must match.',
+                'options' => ['attr' => ['class' => 'input-container',
+                'placeholder' => 'Password',]],
+                'required' => true,
+                'first_options'  => ['label' => false],
+                'second_options' => ['label' => false],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Please enter a password',
@@ -59,8 +58,7 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
